@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static javax.persistence.EnumType.STRING;
 import static javax.persistence.FetchType.LAZY;
@@ -39,7 +40,16 @@ public class Product {
     @ManyToOne(fetch = LAZY)
     private Category category;
 
+    @OneToMany
+    private List<ProductBoard> productBoards;
+
     private LocalDateTime createDate;
 
     private LocalDateTime modifiedDate;
+
+    public void test() {
+        for (ProductBoard productBoard : productBoards) {
+            productBoard.getId();
+        }
+    }
 }

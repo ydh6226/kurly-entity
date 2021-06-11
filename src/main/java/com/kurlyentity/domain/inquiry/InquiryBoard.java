@@ -1,4 +1,4 @@
-package com.kurlyentity.domain.board;
+package com.kurlyentity.domain.inquiry;
 
 import com.kurlyentity.domain.member.Member;
 import lombok.EqualsAndHashCode;

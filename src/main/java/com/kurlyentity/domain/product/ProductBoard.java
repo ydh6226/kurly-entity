@@ -1,7 +1,7 @@
-package com.kurlyentity.domain.board;
+package com.kurlyentity.domain.product;
 
 
-import com.kurlyentity.domain.product.Product;
+import com.kurlyentity.domain.member.Member;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,6 +32,12 @@ public class ProductBoard {
 
     @Enumerated(STRING)
     private ProductBoardType type;
+
+    @ManyToOne(fetch = LAZY)
+    private Member member;
+
+    @ManyToOne(fetch = LAZY)
+    private Product product;
 
     private LocalDateTime createDate;
 
